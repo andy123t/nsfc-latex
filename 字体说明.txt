@@ -1,0 +1,14 @@
+
+字体设置说明
+
+一般情况 windows 系统会直接调用中文字体 (默认)
+特殊情况 (比如 mac 系统等) 可能需要本地路径调用字体
+主文件夹下建一个 fonts 文件夹, 放置宋体, 楷体和仿宋字体
+SimSun.ttf, KaiTi.ttf, FangSong.ttf
+注意: 这些字体版权属于北京中易公司, 未经授权, 不可商用
+字体下载网站: https://www.fonts.net.cn/
+
+设置好本地字体, 选择 fonts 选项, 模板会自动调用相应字体, 比如青基正文
+\documentclass[YF,fonts]{nsfc}
+
+此时模板适合 Mac 或 Windows 系统
