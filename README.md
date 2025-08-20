@@ -13,7 +13,7 @@
 \documentclass[YF]{nsfc}
 % GP -- 面上项目
 % YF -- 青年基金
-% fonts -- 使用本地字体
+% fonts -- 使用本地文件夹字体
 ```
 
 注：缺省 fonts 仅适用于 Windows 系统，使用 fonts 可支持 Mac 系统 (参见 字体说明.txt)。

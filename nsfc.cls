@@ -2,14 +2,14 @@
 %% This is file `nsfc.cls',
 %%
 %% @author andy123t
-%% @date 2025/06/24
+%% @date 2025/08/20
 %% @version v1.0
 %% @address https://github.com/andy123t/nsfc
 %% LaTeX thesis template for NSFC
 %%
 
 %---------- 定义的新的Class ----------
-\ProvidesClass{nsfc}[2025/06/24 v1.0 国家自然科学基金申请书正文 LaTeX 类]
+\ProvidesClass{nsfc}[2025/08/20 v1.0 国家自然科学基金申请书正文 LaTeX 类]
 \NeedsTeXFormat{LaTeX2e}
 
 \newif\ifnsfc@fonts\nsfc@fontsfalse
@@ -155,8 +155,8 @@
 %---------- 设置章节标题间距 ----------
 \titlespacing*{\chapter}{0pt}{4pt plus 1pt minus 1pt}{4pt plus 1pt minus 1pt}
 \titlespacing*{\section}{0pt}{8pt plus 1pt minus 1pt}{6pt plus 1pt minus 1pt}
-\titlespacing*{\subsection}{0pt}{8pt plus 1pt minus 1pt}{6pt plus 1pt minus 1pt}
-\titlespacing*{\subsubsection}{0pt}{8pt plus 1pt minus 1pt}{6pt plus 1pt minus 1pt}
+\titlespacing*{\subsection}{0pt}{8pt plus 1pt minus 1pt}{4pt plus 1pt minus 1pt}
+\titlespacing*{\subsubsection}{0pt}{8pt plus 1pt minus 1pt}{2pt plus 1pt minus 1pt}
 
 %---------- 设置图片和表格样式 ----------
 \captionsetup[figure]{position=bottom,skip={6pt},name={图}}
