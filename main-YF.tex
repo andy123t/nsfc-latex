@@ -6,12 +6,10 @@
 \documentclass[YF]{nsfc}
 % GP -- 面上项目
 % YF -- 青年基金
-% fonts -- 使用本地字体
-
-% fonts 选项适用于 Mac 或 Windows 系统, 需调用文件夹 fonts 中字体 SimSun.ttf, KaiTi.ttf, FangSong.ttf
-% 缺省 fonts 仅适用于 Windows 系统
 
 % 注: 选项仅对应不同布局和字体, 注意面上和青基的提纲也不同
+% 本模板适用于 Mac 和 Windows 系统
+% 本模板需调用文件夹 fonts 中字体 SimSun.ttf, KaiTi.ttf, FangSong.ttf
 
 %----- 添加其他宏包 -----
 %\usepackage[notcite,notref]{showkeys}
@@ -43,6 +41,14 @@
 %----- 微分算子 -----
 \newcommand*{\dif}{\mathop{}\!\mathrm{d}}
 
+% section手动输入
+%\newcommand{\msection}[1]{{\kaishu\sffamily\zihao{4} #1}}
+\newcommand{\msection}[1]{%
+  \par\vspace{6pt}%
+  {\sffamily\songti\zihao{4} #1}%
+  \par\vspace{3pt}%
+}
+
 %----- 自定义命令 -----
 \newcommand{\CC}{\ensuremath{\mathbb{C}}}
 \newcommand{\RR}{\ensuremath{\mathbb{R}}}
@@ -59,17 +65,28 @@
 % 报告正文标题页
 \maketitlepage
 
+
+
 % 报告正文内容
-\chapter{\textbf{立项依据与研究内容}（建议8000字以内）：}
-\section{\textbf{项目的立项依据}（研究意义、国内外研究现状及发展动态分析，需结合科学研究发展趋势来论述科学意义；或结合国民经济和社会发展中迫切需要解决的关键科技问题来论述其应用前景。附主要参考文献目录）；}
+\chapter{\textbf{立项依据}}
+\NSFCnote{（为什么要开展此项研究，研究的科学技术价值如何）}
 
 \red{免责声明：请仔细比较本模板与官方 Word 模板转换 PDF 后的格式差异，然后决定是否使用此模板。}
 
-\subsection{研究现状及意义}
+\section{\textbf{研究现状及意义}}
 
-\subsubsection{模板介绍}
+自动编号的小节
 
-这是小四号的正文字体。
+\msection{2. \textbf{存在的问题}}
+
+这是手动添加的小节（格式可修改）
+
+\red{选择其中一个方式，统一即可。}
+
+\chapter{\textbf{研究内容}}
+\NSFCnote{（提纲不做限制，请按照研究工作的自身逻辑撰写。应提炼出特 色与创新点、年度研究计划）}
+
+\section{模板介绍}
 
 通过空一行实现段落换行，仅仅是回车并不会产生新的段落。
 
@@ -85,7 +102,6 @@
       \item 第一项中的第二项
     \end{enumerate}
   \item 第二项
-  \item 第三项
 \end{enumerate}
 
 这是一个不计数的列表。
@@ -96,10 +112,9 @@
     \item 第一项中的第二项
   \end{itemize}
   \item 第二项
-  \item 第三项
 \end{itemize}
 
-\subsubsection{文献引用}
+\subsection{文献引用}
 
 参考文献可采用 BibTeX 方式生成 (文献信息写在文件 \verb|reference.bib| 中)，参考文献的样式为 \verb|nsfc-numeric| 和 \verb|nsfc-author-year|，符合国家标准《信息与文献参考文献著录规则》GB/T 7714-2015，论文中引用和参考的文献必须列出。参考文献序号按所引文献在论文中出现的先后次序排列。引用文献应在论文中的引用处加注文献序号，并加注方括弧。
 
@@ -107,7 +122,7 @@
 
 文献引用的其他使用情况 \cite[定理~1.1]{LiLiu1997} 和 \cite{Shen1994,LiuEtAl2024}。
 
-\subsubsection{数学公式}
+\subsection{数学公式}
 
 数学公式的使用请参考《一份(不太)简短的 \LaTeX~2$\varepsilon$ 介绍》 (lshort-zh-cn)，更多的数学符号参考 The Comprehensive LaTeX Symbol List (symbols-a4)。
 
@@ -156,9 +171,9 @@ align 和 gather 有对应不带编号的环境 align* 和 gather*.
 \end{aligned} \right.
 \end{equation}
 
-\subsubsection{图的使用}
+\subsection{图的使用}
 
-XeLaTeX 编译环境下可以插入 EPS、PDF、PNG、JPEG、BMP 格式的图片，也可以用绘图宏包 (如 tikz 宏包) 直接在 \LaTeX 中绘制图形。值得注意的是 figure 环境是一个浮动体环境，LaTeX 不总是浮动体放在你想要的地方，但是 LaTeX 总是保证浮动体的相对顺序，所以对图片 \verb|\label| 和 \verb|\ref| 的交叉引用就显得尤为重要。
+XeLaTeX 编译环境下可以插入 EPS、PDF、PNG、JPEG、BMP 格式的图片。值得注意的是 figure 环境是一个浮动体环境，LaTeX 不总是浮动体放在你想要的地方，但是 LaTeX 总是保证浮动体的相对顺序，所以对图片 \verb|\label| 和 \verb|\ref| 的交叉引用就显得尤为重要。
 
 \textbf{插图示例}
 
@@ -170,6 +185,7 @@ XeLaTeX 编译环境下可以插入 EPS、PDF、PNG、JPEG、BMP 格式的图片
 \end{figure}
 
 两个图左右并排放置，共用一个标题，如图~\ref{fig:image}.
+
 \begin{figure}[htp!]
 \centering
 \includegraphics[width=0.45\linewidth]{image1}
@@ -206,7 +222,7 @@ XeLaTeX 编译环境下可以插入 EPS、PDF、PNG、JPEG、BMP 格式的图片
 \label{fig:images}
 \end{figure}
 
-\subsubsection{表的使用}
+\subsection{表的使用}
 
 LaTeX 的 table 环境是一个浮动体，与 figure 环境的排版方式类似。简单的表格可以使用三线表进行排版。
 
@@ -232,13 +248,11 @@ LaTeX 的 table 环境是一个浮动体，与 figure 环境的排版方式类�
 \end{tabular}
 \end{table}
 
-\subsection{存在的问题}
 
-内容
-
-\renewcommand{\bibname}{\color{black}\normalfont\normalsize\bfseries 参考文献}
 
 %============== 参考文献 ==============%
+
+\renewcommand{\bibname}{\color{black}\normalfont\normalsize\bfseries 参考文献}
 
 % 生成参考文献, 两种方式任选一种
 
@@ -246,37 +260,62 @@ LaTeX 的 table 环境是一个浮动体，与 figure 环境的排版方式类�
 %\nocite{*}  % 可以显示全部参考文献
 \bibliography{reference}
 
+%------------------------------------%
+
+% 第二种方式, 手动添加文献信息
+
+%\begin{thebibliography}{99}
+%\bibitem{Tadmor2012} Tadmor~E. A review of numerical methods for nonlinear partial differential equations\allowbreak[J]. Bull. Amer. Math. Soc., 2012, 49(4): 507-554.
+%\end{thebibliography}
+
+%====================================%
 
 
-% New section
-\section{\textbf{项目的研究内容、研究目标，以及拟解决的关键科学问题}（此部分为重点阐述内容）\textbf{；}}
+% 研究基础
+\chapter{\textbf{研究基础}}
 
-\section{\textbf{拟采取的研究方案及可行性分析}（包括研究方法、技术路线、实验手段、关键技术等说明）；}
+\section{\textbf{研究基础与可行性分析}\kern0.2em（与本项目相关的研究工作积累和已 取得的研究工作成绩，研究风险的应对措施等）；}
 
-\section{\textbf{本项目的特色与创新之处；}}
-
-\section{\textbf{年度研究计划及预期研究结果}\kern0.2em（包括拟组织的重要学术交流活动、国际合作与交流计划等）。}
-
-\chapter{\textbf{研究基础与工作条件}}
-\section{\textbf{研究基础}\kern0.2em（与本项目相关的研究工作积累和已取得的研究工作成绩）；}
+填写内容
 
 \section{\textbf{工作条件}\kern0.2em（包括已具备的实验条件，\kern0.2em 尚缺少的实验条件和拟解决的途径，包括利用国家实验室、全国重点实验室和部门重点实验室等研究基地的计划与落实情况）；}
 
+填写内容
+
 \section{\textbf{正在承担的与本项目相关的科研项目情况}\kern0.2em（申请人正在承担的与本项目相关的科研项目情况，包括国家自然科学基金的项目和国家其他科技计划项目，\kern0.1em 要注明项目的资助机构、\kern0.1em 项目类别、\kern0.1em 批准号、项目名称、获资助金额、起止年月、与本项目的关系及负责的内容等）；\!\!\!}
 
-\section{\textbf{完成国家自然科学基金项目情况}\kern0.2em（对申请人负责的前一个已资助期满的科学基金项目（项目名称及批准号）完成情况、后续研究进展及与本申请项目的关系加以详细说明。另附该项目的研究工作总结摘要（限 500 字）和相关成果详细目录）。}
+填写内容
 
+\section{\textbf{完成国家自然科学基金项目情况}\kern0.2em（对申请人负责的前一个已资助期满的科学基金项目（项目名称及批准号）完成情况、后续研究进展及与本申请项目的关系加以详细说明。另附该项目的研究工作总结摘要（限500字）和相关成果详细目录）。}
+
+填写内容
+
+
+% 其他需要说明的情况
 \chapter{\textbf{其他需要说明的情况}}
 \section{申请人同年申请不同类型的国家自然科学基金项目情况\kern0.2em（列明同年申请的其他项目的项目类型、项目名称信息，并说明与本项目之间的区别与联系；已收到自然科学基金委不予受理或不予资助决定的，无需列出）。}
 
+填写内容
+
 \section{具有高级专业技术职务\kern0.2em（职称）\kern0.2em 的申请人是否存在同年申请或者参与申请国家自然科学基金项目的单位不一致的情况；如存在上述情况，列明所涉及人员的姓名，申请或参与申请的其他项目的项目类型、项目名称、单位名称、上述人员在该项目中是申请人还是参与者，并说明单位不一致原因。}
+
+填写内容
 
 \section{具有高级专业技术职务\kern0.2em（职称）\kern0.2em 的申请人是否存在与正在承担的国家自然科学基金项目的单位不一致的情况；如存在上述情况，列明所涉及人员的姓名，正在承担项目的批准号、项目类型、项目名称、单位名称、起止年月，并说明单位不一致原因。}
 
+填写内容
+
 \section{同年以不同专业技术职务\kern0.2em（职称）\kern0.2em 申请或参与申请科学基金项目的情况（应详细说明原因）。}
 
-\section{其他。}
+填写内容
 
+\section{申请人在撰写本申请书时使用生成式人工智能的情况，请详 细说明申请书中使用的位置和内容。}
+
+填写内容
+
+\section{其他（包括但不限于使用以他人名义申报过的申请书；如有，请详细说明）。}
+
+填写内容
 
 
 \end{document}

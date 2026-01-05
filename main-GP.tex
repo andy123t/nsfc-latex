@@ -6,12 +6,10 @@
 \documentclass[GP]{nsfc}
 % GP -- 面上项目
 % YF -- 青年基金
-% fonts -- 使用本地字体
-
-% fonts 选项适用于 Mac 或 Windows 系统, 需调用文件夹 fonts 中字体 SimSun.ttf, KaiTi.ttf, FangSong.ttf
-% 缺省 fonts 仅适用于 Windows 系统
 
 % 注: 选项仅对应不同布局和字体, 注意面上和青基的提纲也不同
+% 本模板适用于 Mac 和 Windows 系统
+% 本模板需调用文件夹 fonts 中字体 SimSun.ttf, KaiTi.ttf, FangSong.ttf
 
 %----- 添加其他宏包 -----
 %\usepackage[notcite,notref]{showkeys}
@@ -67,7 +65,9 @@
 
 \subsection{研究现状及意义}
 
-\subsubsection{模板介绍}
+内容
+
+\subsection{模板介绍}
 
 这是小四号的正文字体。
 
@@ -99,7 +99,7 @@
   \item 第三项
 \end{itemize}
 
-\subsubsection{文献引用}
+\subsection{文献引用}
 
 参考文献可采用 BibTeX 方式生成 (文献信息写在文件 \verb|reference.bib| 中)，参考文献的样式为 \verb|nsfc-numeric| 和 \verb|nsfc-author-year|，符合国家标准《信息与文献参考文献著录规则》GB/T 7714-2015，论文中引用和参考的文献必须列出。参考文献序号按所引文献在论文中出现的先后次序排列。引用文献应在论文中的引用处加注文献序号，并加注方括弧。
 
@@ -107,7 +107,7 @@
 
 文献引用的其他使用情况 \cite[定理~1.1]{LiLiu1997} 和 \cite{Shen1994,LiuEtAl2024}。
 
-\subsubsection{数学公式}
+\subsection{数学公式}
 
 数学公式的使用请参考《一份(不太)简短的 \LaTeX~2$\varepsilon$ 介绍》 (lshort-zh-cn)，更多的数学符号参考 The Comprehensive LaTeX Symbol List (symbols-a4)。
 
@@ -156,7 +156,7 @@ align 和 gather 有对应不带编号的环境 align* 和 gather*.
 \end{aligned} \right.
 \end{equation}
 
-\subsubsection{图的使用}
+\subsection{图的使用}
 
 XeLaTeX 编译环境下可以插入 EPS、PDF、PNG、JPEG、BMP 格式的图片，也可以用绘图宏包 (如 tikz 宏包) 直接在 \LaTeX 中绘制图形。值得注意的是 figure 环境是一个浮动体环境，LaTeX 不总是浮动体放在你想要的地方，但是 LaTeX 总是保证浮动体的相对顺序，所以对图片 \verb|\label| 和 \verb|\ref| 的交叉引用就显得尤为重要。
 
@@ -206,7 +206,7 @@ XeLaTeX 编译环境下可以插入 EPS、PDF、PNG、JPEG、BMP 格式的图片
 \label{fig:images}
 \end{figure}
 
-\subsubsection{表的使用}
+\subsection{表的使用}
 
 LaTeX 的 table 环境是一个浮动体，与 figure 环境的排版方式类似。简单的表格可以使用三线表进行排版。
 
@@ -236,15 +236,26 @@ LaTeX 的 table 环境是一个浮动体，与 figure 环境的排版方式类�
 
 内容
 
-\renewcommand{\bibname}{\color{black}\normalfont\normalsize\bfseries 参考文献}
 
 %============== 参考文献 ==============%
+
+\renewcommand{\bibname}{\color{black}\normalfont\normalsize\bfseries 参考文献}
 
 % 生成参考文献, 两种方式任选一种
 
 % 第一种方式, 使用 bib 文件
 %\nocite{*}  % 可以显示全部参考文献
 \bibliography{reference}
+
+%------------------------------------%
+
+% 第二种方式, 手动添加文献信息
+
+%\begin{thebibliography}{99}
+%\bibitem{Tadmor2012} Tadmor~E. A review of numerical methods for nonlinear partial differential equations\allowbreak[J]. Bull. Amer. Math. Soc., 2012, 49(4): 507-554.
+%\end{thebibliography}
+
+%====================================%
 
 
 
