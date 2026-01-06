@@ -91,6 +91,7 @@
 
 %---------- 定义颜色 -----------
 \definecolor{NSFCblue}{RGB}{0,112,192}
+\definecolor{NSFCred}{RGB}{255,0,0}
 
 %---------- 设置不同的参数 ----------
 \ifnsfc@GP
@@ -103,14 +104,14 @@
 %---------- 符号设置 ----------
 \defaultfontfeatures{Mapping=tex-text} % 连字符
 \xeCJKsetwidth{，。；}{1em} % 符号宽度
-\xeCJKsetwidth{、}{0.8em} % 符号宽度
+\xeCJKsetwidth{、}{1.1em} % 符号宽度
 \xeCJKsetwidth{（）}{1em} % 符号宽度
 
 %----- 控制汉字和英文之间的间距, 应该设置成弹性间距 -----
 \xeCJKsetup{CJKecglue={\hskip 4pt plus 0.08\baselineskip}}
 
 %----- 字距 ------
-\ziju{0.008}
+\ziju{0.005}
 
 %---------- 中文段落缩进和行距 ----------
 \setlength{\parindent}{2\ccwd}
@@ -137,7 +138,7 @@
 % section title
 \titleformat{\section}[block]
   {\linespread{1.3}\color{NSFCblue}\kaishu\enkai\zihao{4}} % format
-  {\kern2.1em\arabic{section}．} % number
+  {\kern2.0em\arabic{section}．} % number
   {0em}
   {}
 % subsubsection title
@@ -150,7 +151,7 @@
 % NSFC note
 \newcommand{\NSFCnote}[1]{%
 \begingroup
-\linespread{1.3}\color{NSFCblue}\kaishu\enkai\zihao{4}\selectfont
+\linespread{1.3}\color{NSFCblue}\kaishu\enkai\zihao{4}\selectfont%
 #1\par
 \endgroup
 }
@@ -194,14 +195,9 @@
 \graphicspath{{figures/}}
 
 %---------- 标题页命令 ----------
-\newcommand{\maketitlepage}{%
-\centerline{\kaishu\enkai\fontsize{16pt}{22pt}\selectfont\qquad\textbf{报告正文（2026版）}}
-
+\renewcommand{\maketitle}{%
+\centerline{\kaishu\enkai\fontsize{16pt}{22pt}\selectfont\qquad\textbf{报告正文（{\addfontfeatures{LetterSpace=1}2026}版）}}
 \vspace{5pt}
-
-{\kaishu\enkai\fontsize{14pt}{16pt}\selectfont%
-参照以下提纲撰写，要求内容翔实、清晰，层次分明，标题突出。申请书正文原则上不超过30页，鼓励简洁表达。\textbf{\color{NSFCblue}请勿删除或改动下述提纲标题及括号中的文字。}\par
-}
 }
 
 % End of file `nfsc.cls'.
