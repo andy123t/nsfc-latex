@@ -42,14 +42,13 @@
 \newcommand*{\dif}{\mathop{}\!\mathrm{d}}
 
 %----- section手动输入 -----
-%\newcommand{\msection}[1]{{\kaishu\sffamily\zihao{4} #1}}
+%\newcommand{\msection}[1]{{\kaishu\sffamily\zihao{-4} #1}}
 \newcommand{\msection}[1]{%
-  \par\vspace{6pt}%
-  {\sffamily\songti\zihao{4} #1}%
-  \par\vspace{3pt}%
+  \par\vspace{5pt}%
+  {\sffamily\songti\zihao{-4} #1}%
+  \par\vspace{2pt}%
+  \setcounter{subsection}{0}%
 }
-
-% 如需指定 section number 可使用 \setcounter{section}{n}
 
 %----- 自定义命令 -----
 \newcommand{\CC}{\ensuremath{\mathbb{C}}}
@@ -73,6 +72,8 @@
 \textbf{\color{NSFCblue}请勿删除或改动下述提纲标题及括号中的文字。}\par
 }
 
+%====================================%
+
 
 % 报告正文内容
 \chapter{\textbf{立项依据：}}
@@ -80,21 +81,24 @@
 
 \red{免责声明：请仔细比较本模板与官方 Word 模板转换 PDF 后的格式差异，然后决定是否使用此模板。}
 
-\section{\textbf{研究现状及意义}}
-
-自动编号的小节
-
-\msection{2. \textbf{存在的问题}}
+\msection{1. \textbf{研究现状及意义}}
+%\vspace{-4pt} %仅在\msection后紧跟\subsection时使用
 
 这是手动添加的小节（格式可修改）
 
-\red{选择其中一个方式，统一即可。}
+\msection{2. \textbf{存在的问题}}
 
+内容
+
+{\color{red}若使用 \verb|\section| 自动编号，与旧模板一致。}
+
+
+% 研究内容
 \chapter{\textbf{研究内容：}}
 
 \NSFCnote{\hspace{3pt}（提纲不做限制，请按照研究工作的自身逻辑撰写。应提炼出特 色与创新点、年度研究计划）}
 
-\section{\textbf{模板介绍}}
+\msection{1. \textbf{模板介绍}}
 
 通过空一行实现段落换行，仅仅是回车并不会产生新的段落。
 
@@ -110,6 +114,7 @@
       \item 第一项中的第二项
     \end{enumerate}
   \item 第二项
+  \item 第三项
 \end{enumerate}
 
 这是一个不计数的列表。

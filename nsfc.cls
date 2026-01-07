@@ -2,7 +2,7 @@
 %% This is file `nsfc.cls',
 %%
 %% @author andy123t
-%% @date 2026/01/06
+%% @date 2026/01/08
 %% @version v1.1
 %% @address https://github.com/andy123t/nsfc
 %% LaTeX thesis template for NSFC
@@ -14,10 +14,8 @@
 
 \newif\ifnsfc@GP\nsfc@GPfalse
 \newif\ifnsfc@YF\nsfc@YFfalse
-%\newif\ifnsfc@fonts\nsfc@fontsfalse
 \DeclareOption{GP}{\nsfc@GPtrue}
 \DeclareOption{YF}{\nsfc@YFtrue}
-%\DeclareOption{fonts}{\nsfc@fontstrue}
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{ctexbook}}
 \ExecuteOptions{GP}
 \ProcessOptions\relax
@@ -25,7 +23,7 @@
 %---------------------------------
 % GP -- 面上项目
 % YF -- 青年基金
-% fonts -- 适合 Mac 或 Windows 系统, 需调用本地文件夹 fonts 中字体
+% fonts -- 适合 Mac 和 Windows 系统, 需调用本地文件夹 fonts 中字体
 %---------------------------------
 
 %---------- 修改字体宏包Options ----------
@@ -62,6 +60,7 @@
 %\setmainfont[Path=fonts/]{Times New Roman}
 \setsansfont[Scale=0.98]{Arial}
 
+%----- 检查ctexbook版本 -----
 \@ifclasslater{ctexbook}{2017/01/01}{}{%
   \ClassError{nsfc}{ctex >= 2017/01/01 is required ...}{}%
 }
