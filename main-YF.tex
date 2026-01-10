@@ -22,8 +22,10 @@
 
 %----- 列表设置 -----
 %\setlist{nolistsep}
-\setenumerate[1]{itemsep=2pt,parsep=0pt,topsep=6pt}
-\setitemize[1]{itemsep=2pt,parsep=0pt,topsep=6pt}
+\setenumerate[1]{itemsep=3pt,parsep=0pt,topsep=4pt}
+\setitemize[1]{itemsep=3pt,parsep=0pt,topsep=4pt}
+\setenumerate[2]{itemsep=2pt,parsep=0pt,topsep=3pt}
+\setitemize[2]{itemsep=2pt,parsep=0pt,topsep=3pt}
 
 %----- 参考文献格式 -----
 %\bibliographystyle{abbrv}
@@ -45,7 +47,7 @@
 %\newcommand{\msection}[1]{{\kaishu\sffamily\zihao{-4} #1}}
 \newcommand{\msection}[1]{%
   \par\vspace{5pt}%
-  {\sffamily\songti\zihao{-4} #1}%
+  {\noindent\sffamily\songti\zihao{-4} #1}%
   \par\vspace{2pt}%
   \setcounter{subsection}{0}%
 }
@@ -81,16 +83,16 @@
 
 \red{免责声明：请仔细比较本模板与官方 Word 模板转换 PDF 后的格式差异，然后决定是否使用此模板。}
 
-\msection{1. \textbf{研究现状及意义}}
+\msection{1.~~\textbf{研究现状及意义}}
 %\vspace{-4pt} %仅在\msection后紧跟\subsection时使用
 
 这是手动添加的小节（格式可修改）
 
-\msection{2. \textbf{存在的问题}}
+\msection{2.~~\textbf{存在的问题}}
 
 内容
 
-{\color{red}若使用 \verb|\section| 自动编号，与旧模板一致。}
+{\color{red}以上为 \verb|\msection| 手动编号，若使用 \verb|\section| 自动编号，与旧模板一致。}
 
 
 % 研究内容
@@ -98,7 +100,7 @@
 
 \NSFCnote{（提纲不做限制，请按照研究工作的自身逻辑撰写。应提炼出特 色与创新点、年度研究计划）}
 
-\msection{1. \textbf{模板介绍}}
+\msection{1.~~\textbf{模板介绍}}
 
 通过空一行实现段落换行，仅仅是回车并不会产生新的段落。
 
@@ -106,10 +108,10 @@
 
 本模板基于标准文类 ctexbook 设计，可以在目前主流的 \href{https://en.wikibooks.org/wiki/LaTeX/Introduction}{\LaTeX{}} 编译系统中使用，如 \TeX{}Live、MiK\TeX{}和Mac\TeX{}。
 
-这是一个计数的列表。
-\begin{enumerate}
+\textbf{首先}，给出一个计数的列表。
+\begin{enumerate}[label={(\arabic*)}]
   \item 第一项
-    \begin{enumerate}
+    \begin{enumerate}[label={(\alph*)}]
       \item 第一项中的第一项
       \item 第一项中的第二项
     \end{enumerate}
@@ -117,7 +119,9 @@
   \item 第三项
 \end{enumerate}
 
-这是一个不计数的列表。
+{\color{red}注意：若采用 (1) 这类编号列表，不建议使用三级标题 \verb|\subsection|.}
+
+\textbf{其次}，给出一个不计数的列表。
 \begin{itemize}
   \item 第一项
   \begin{itemize}
@@ -186,7 +190,7 @@ align 和 gather 有对应不带编号的环境 align* 和 gather*.
 
 \subsection{图的使用}
 
-XeLaTeX 编译环境下可以插入 EPS、PDF、PNG、JPEG、BMP 格式的图片。值得注意的是 figure 环境是一个浮动体环境，LaTeX 不总是浮动体放在你想要的地方，但是 LaTeX 总是保证浮动体的相对顺序，所以对图片 \verb|\label| 和 \verb|\ref| 的交叉引用就显得尤为重要。
+XeLaTeX 编译环境下可以插入 EPS、PDF、PNG、JPEG、BMP 格式的图片。值得注意的是 figure 环境是一个浮动体环境，LaTeX 不总是浮动体放在你想要的地方，但是 LaTeX 总是保证浮动体的相对顺序。
 
 \textbf{插图示例}
 

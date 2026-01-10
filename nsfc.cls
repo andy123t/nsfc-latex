@@ -2,14 +2,14 @@
 %% This is file `nsfc.cls',
 %%
 %% @author andy123t
-%% @date 2026/01/08
-%% @version v1.1
+%% @date 2026/01/10
+%% @version v1.2
 %% @address https://github.com/andy123t/nsfc
 %% LaTeX thesis template for NSFC
 %%
 
 %---------- 定义的新的Class ----------
-\ProvidesClass{nsfc}[2026/01/06 v1.1 国家自然科学基金申请书正文 LaTeX 类]
+\ProvidesClass{nsfc}[2026/01/10 v1.2 国家自然科学基金申请书正文 LaTeX 类]
 \NeedsTeXFormat{LaTeX2e}
 
 \newif\ifnsfc@GP\nsfc@GPfalse
@@ -56,7 +56,7 @@
   ]{SimSun.ttf}
 \providecommand\songti{\CJKfamily{zhsong}}
 \providecommand\kaishu{\CJKfamily{zhkai}}
-\setmainfont{Times New Roman}
+%\setmainfont{Times New Roman}
 %\setmainfont[Path=fonts/]{Times New Roman}
 \setsansfont[Scale=0.98]{Arial}
 
@@ -143,7 +143,7 @@
 % subsubsection title
 \titleformat{\subsection}[hang]
   {\linespread{1.0}\zihao{-4}}
-  {\hspace{2.1em}\sffamily(\arabic{subsection})}
+  {\hspace{0.2em}\sffamily(\arabic{subsection})}
   {0.6em}
   {\bfseries}
 
